@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satya Store 3</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,sans-serif;background:#f6f7f9;color:#17202a}
+    header{background:#111827;color:white;padding:28px 18px;text-align:center}
+    header h1{margin:0 0 8px;font-size:32px}
+    header p{margin:0;color:#cbd5e1}
+    nav{background:white;padding:14px;text-align:center;box-shadow:0 2px 8px #0001}
+    nav a{margin:0 12px;color:#17202a;text-decoration:none;font-weight:bold}
+    main{max-width:1100px;margin:auto;padding:24px 16px}
+    .hero{background:white;border-radius:16px;padding:28px;text-align:center;margin-bottom:24px}
+    .hero h2{margin-top:0;font-size:28px}
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:white;border-radius:16px;padding:18px;box-shadow:0 3px 12px #00000012}
+    .pic{height:150px;border-radius:12px;background:#e5e7eb;display:grid;place-items:center;font-size:50px}
+    .card h3{margin:14px 0 8px}
+    .price{font-size:20px;font-weight:bold;margin-bottom:12px}
+    button{border:0;border-radius:10px;padding:11px 16px;background:#16a34a;color:white;font-weight:bold;cursor:pointer}
+    footer{text-align:center;padding:28px;color:#64748b}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Satya Store 3</h1>
+    <p>Simple, modern online shopping</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#products">Products</a>
+    <a href="#cart">Cart 🛒</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <h2>Welcome to Satya Store</h2>
+      <p>Browse our products and add your favorites to the cart.</p>
+    </section>
+
+    <section id="products" class="products">
+      <div class="card">
+        <div class="pic">🛍️</div>
+        <h3>Featured Product</h3>
+        <div class="price">₹499</div>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="card">
+        <div class="pic">🎧</div>
+        <h3>Daily Essentials</h3>
+        <div class="price">₹799</div>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="card">
+        <div class="pic">⌚</div>
+        <h3>Smart Choice</h3>
+        <div class="price">₹999</div>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+    </section>
+
+    <section id="cart" class="hero" style="margin-top:24px">
+      <h2>Cart</h2>
+      <p id="cartText">Your cart is empty.</p>
+    </section>
+  </main>
+
+  <footer>© 2026 Satya Store 3</footer>
+
+  <script>
+    let cart = 0;
+    function addToCart(){
+      cart++;
+      document.getElementById("cartText").textContent =
+        cart + (cart === 1 ? " item" : " items") + " in your cart.";
+    }
+  </script>
+</body>
+</html>
